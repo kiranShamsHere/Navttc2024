@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div> <input type="text" id="salary" required placeholder="Enter Your Salary"></div>
+            <div> <input type="text" id="tax" required placeholder="Enter Text Deduction"></div>
+            <button type="submit" id="calc">Calculate</button>
+            <h3 id="show"></h3>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $("form").submit(function (e) {
+            e.preventDefault();
+            let salaryValue = $("#salary").val();
+            let taxValue = $("#tax").val();
+            let netValue = Number(salaryValue) - Number(taxValue);
+            $("#show").text(netValue);
+            $('#show').show();
+        });    
+    </script>
+</body>
+
+</html>
